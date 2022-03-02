@@ -10,7 +10,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
+        colorScheme: Theme.of(context).colorScheme.copyWith(primary: Colors.deepOrange),
+        errorColor: Colors.red,
+        textTheme: ThemeData.light().textTheme.copyWith(
+          bodyText1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+          bodyText2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+          subtitle1: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          subtitle2: TextStyle(fontSize: 15),
+        ),
       ),
       home: MyHomePage(),
     );
@@ -18,7 +26,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +35,22 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
           title: Text('Shop app'),
           centerTitle: true
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Container(
+              height: 125,
+              width: double.infinity,
+              color: Colors.orange,
+              child: Center(child: Text('Shop app', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('First section'),
+            ),
+          ],
+        ),
       ),
       body: Center(
         child: Text('Main page'),
