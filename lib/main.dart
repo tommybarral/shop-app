@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/Screens/product_overview_screen.dart';
 
 void main() => runApp(MyApp());
 
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,41 +20,12 @@ class MyApp extends StatelessWidget {
           subtitle2: TextStyle(fontSize: 15),
         ),
       ),
-      home: MyHomePage(),
+      home: ProductOverviewScreen(),
+      routes: {
+        ProductOverviewScreen.routeName: (context) => ProductOverviewScreen(),
+
+      },
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: Text('Shop app'),
-          centerTitle: true
-      ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            Container(
-              height: 125,
-              width: double.infinity,
-              color: Colors.orange,
-              child: Center(child: Text('Shop app', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('First section'),
-            ),
-          ],
-        ),
-      ),
-      body: Center(
-        child: Text('Main page'),
-      ),
-    );
-  }
-}
