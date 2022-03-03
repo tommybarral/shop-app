@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/Screens/product_detail_screen.dart';
 
 class ProductItem extends StatelessWidget {
 
@@ -15,15 +16,20 @@ class ProductItem extends StatelessWidget {
         backgroundColor: Colors.black54,
         leading: IconButton(
           icon: Icon(Icons.favorite),
+          color: Theme.of(context).colorScheme.primary,
           onPressed: () {},
         ),
         title: Text(title, textAlign: TextAlign.center),
         trailing: IconButton(
           icon: Icon(Icons.add_shopping_cart),
+          color: Theme.of(context).colorScheme.primary,
           onPressed: () {},
         ),
       ),
-        child: Image.network(imageUrl, fit: BoxFit.cover,),
+        child: GestureDetector(
+          onTap: () {},
+          child: Image.network(imageUrl, fit: BoxFit.cover),
+        ),
     );
   }
 }
