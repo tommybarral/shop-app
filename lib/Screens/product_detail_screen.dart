@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/main_drawer.dart';
+import '../main_drawer.dart';
+
 
 class ProductDetailScreen extends StatelessWidget {
 
@@ -7,8 +8,9 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      appBar: AppBar(title: Text('name product'),),
+      appBar: AppBar(title: Text('name product'), centerTitle: true,),
       drawer: MainDrawer(),
       body: Center(child: Text('Product details here'),),
     );
