@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import './Screens/product_detail_screen.dart';
 import '../Screens/product_overview_screen.dart';
-import './Providers/product_provider.dart';
+import 'Models/product_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
