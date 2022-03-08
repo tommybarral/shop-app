@@ -11,8 +11,6 @@ class ProductItem extends StatelessWidget {
   ProductItem(this.id, this.title, this.imageUrl);
    */
 
-
-
   @override
   Widget build(BuildContext context) {
 
