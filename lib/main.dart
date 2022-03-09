@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import './Models/product_provider.dart';
+import './Models/cart.dart';
 import './Screens/product_detail_screen.dart';
 import '../Screens/product_overview_screen.dart';
-import 'Models/product_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,8 +19,15 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (ctx) => ProductProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+        create: (ctx) => ProductProvider()
+        ),
+        ChangeNotifierProvider(
+            create: (ctx) => Cart()
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

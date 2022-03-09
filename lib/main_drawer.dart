@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/Screens/product_detail_screen.dart';
-import 'package:shop_app/Screens/product_overview_screen.dart';
+import './Screens/product_overview_screen.dart';
 
 class MainDrawer extends StatelessWidget {
 
@@ -28,6 +28,7 @@ class MainDrawer extends StatelessWidget {
               Navigator.of(context).pushNamed(ProductOverviewScreen.routeName);
             },
           ),
+          /*
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Product details screen'),
@@ -35,6 +36,7 @@ class MainDrawer extends StatelessWidget {
               Navigator.of(context).pushNamed(ProductDetailScreen.routeName);
             },
           ),
+           */
         ],
       ),
     );
