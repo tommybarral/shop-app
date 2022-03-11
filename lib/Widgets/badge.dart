@@ -7,8 +7,8 @@ class Badge extends StatelessWidget {
   final Color color;
 
   const Badge({
-    required this.child,
-    required this.value,
+    @required this.child,
+    @required this.value,
     this.color = Colors.red,
   });
 

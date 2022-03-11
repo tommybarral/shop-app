@@ -7,10 +7,10 @@ class CartItem {
   final double price;
 
   CartItem({
-    required this.id,
-    required this.title,
-    required this.quantity,
-    required this.price
+    @required this.id,
+    @required this.title,
+    @required this.quantity,
+    @required this.price
   });
 }
 
@@ -24,6 +24,14 @@ class Cart with ChangeNotifier {
   int get itemCount {
     return _items.length;
 
+  }
+
+  double get totalAmount {
+    double total = 0.0;
+    _items.forEach((key, cartItem) {
+      total += cartItem.price * cartItem.quantity;
+    });
+    return total;
   }
 
   void addItem(String productId, String title, double price) {
